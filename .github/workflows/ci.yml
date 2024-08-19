@@ -46,6 +46,9 @@ jobs:
           if [ "$RESPONSE" -ne 200 ]; then
             echo "Some vulnerabilities are found! you need to fix them first"
             exit 1
+          else
+            echo "No vulnerabilities found!"
+          fi
   deploy:
     runs-on: ubuntu-latest
     needs: vulnerability-scanner
